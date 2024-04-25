@@ -1,0 +1,5 @@
+nimTitle	notifications	boticordnim/notifications.html	module boticordnim/notifications		0
+nim	newBoticordNotificator	boticordnim/notifications.html#newBoticordNotificator,string	proc newBoticordNotificator(token: string): BoticordNotificator		7
+nim	close	boticordnim/notifications.html#close,BoticordNotificator	proc close(n: BoticordNotificator)		51
+nim	connect	boticordnim/notifications.html#connect,BoticordNotificator	proc connect(n: BoticordNotificator): owned(Future[void])		92
+nim	event	boticordnim/notifications.html#event.m,BoticordNotificator,untyped	macro event(notificator: BoticordNotificator; fn: untyped): untyped		100

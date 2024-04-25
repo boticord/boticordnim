@@ -1,0 +1,2 @@
+nimTitle	servers	boticordnim/servers.html	module boticordnim/servers		0
+nim	getServer	boticordnim/servers.html#getServer,string	proc getServer(id: string): Future[ResourceServer]		5

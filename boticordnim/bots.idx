@@ -1,0 +1,3 @@
+nimTitle	bots	boticordnim/bots.html	module boticordnim/bots		0
+nim	getBot	boticordnim/bots.html#getBot,string	proc getBot(id: string): Future[ResourceBot]		5
+nim	postBotStats	boticordnim/bots.html#postBotStats,string,string	proc postBotStats(token, id: string; servers, shards, members = none int): Future[\n    ResourceBot]		10

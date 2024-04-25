@@ -1,0 +1,157 @@
+nimTitle	typedefs	boticordnim/typedefs.html	module boticordnim/typedefs		0
+nim	APIResponse	boticordnim/typedefs.html#APIResponse	object APIResponse		5
+nim	RequestError	boticordnim/typedefs.html#RequestError	object RequestError		9
+nim	BoticordRequestError	boticordnim/typedefs.html#BoticordRequestError	type BoticordRequestError		12
+nim	ecInternalServerError	boticordnim/typedefs.html#ecInternalServerError	ErrorCode.ecInternalServerError		14
+nim	ecRateLimited	boticordnim/typedefs.html#ecRateLimited	ErrorCode.ecRateLimited		14
+nim	ecNotFound	boticordnim/typedefs.html#ecNotFound	ErrorCode.ecNotFound		14
+nim	ecForbidden	boticordnim/typedefs.html#ecForbidden	ErrorCode.ecForbidden		14
+nim	ecUnauthorized	boticordnim/typedefs.html#ecUnauthorized	ErrorCode.ecUnauthorized		14
+nim	ecBadRequest	boticordnim/typedefs.html#ecBadRequest	ErrorCode.ecBadRequest		14
+nim	ecRpcError	boticordnim/typedefs.html#ecRpcError	ErrorCode.ecRpcError		14
+nim	ecWsError	boticordnim/typedefs.html#ecWsError	ErrorCode.ecWsError		14
+nim	ecUnknownError	boticordnim/typedefs.html#ecUnknownError	ErrorCode.ecUnknownError		14
+nim	ecThirdPartyFail	boticordnim/typedefs.html#ecThirdPartyFail	ErrorCode.ecThirdPartyFail		14
+nim	ecUnknownUser	boticordnim/typedefs.html#ecUnknownUser	ErrorCode.ecUnknownUser		14
+nim	ecShortLinkTaken	boticordnim/typedefs.html#ecShortLinkTaken	ErrorCode.ecShortLinkTaken		14
+nim	ecUnknownShortDomain	boticordnim/typedefs.html#ecUnknownShortDomain	ErrorCode.ecUnknownShortDomain		14
+nim	ecUnknownLibrary	boticordnim/typedefs.html#ecUnknownLibrary	ErrorCode.ecUnknownLibrary		14
+nim	ecTokenInvalid	boticordnim/typedefs.html#ecTokenInvalid	ErrorCode.ecTokenInvalid		14
+nim	ecUnknownResource	boticordnim/typedefs.html#ecUnknownResource	ErrorCode.ecUnknownResource		14
+nim	ecUnknownTag	boticordnim/typedefs.html#ecUnknownTag	ErrorCode.ecUnknownTag		14
+nim	ecPermissionDenied	boticordnim/typedefs.html#ecPermissionDenied	ErrorCode.ecPermissionDenied		14
+nim	ecUnknownComment	boticordnim/typedefs.html#ecUnknownComment	ErrorCode.ecUnknownComment		14
+nim	ecUnknownBot	boticordnim/typedefs.html#ecUnknownBot	ErrorCode.ecUnknownBot		14
+nim	ecUnknownServer	boticordnim/typedefs.html#ecUnknownServer	ErrorCode.ecUnknownServer		14
+nim	ecUnknownBadge	boticordnim/typedefs.html#ecUnknownBadge	ErrorCode.ecUnknownBadge		14
+nim	ecUserAlreadyHasABadge	boticordnim/typedefs.html#ecUserAlreadyHasABadge	ErrorCode.ecUserAlreadyHasABadge		14
+nim	ecInvalidInviteCode	boticordnim/typedefs.html#ecInvalidInviteCode	ErrorCode.ecInvalidInviteCode		14
+nim	ecServerAlreadyExists	boticordnim/typedefs.html#ecServerAlreadyExists	ErrorCode.ecServerAlreadyExists		14
+nim	ecBotNotPresentOnQueueServer	boticordnim/typedefs.html#ecBotNotPresentOnQueueServer	ErrorCode.ecBotNotPresentOnQueueServer		14
+nim	ecUnknownUp	boticordnim/typedefs.html#ecUnknownUp	ErrorCode.ecUnknownUp		14
+nim	ecTooManyUps	boticordnim/typedefs.html#ecTooManyUps	ErrorCode.ecTooManyUps		14
+nim	ecInvalidStatus	boticordnim/typedefs.html#ecInvalidStatus	ErrorCode.ecInvalidStatus		14
+nim	ecUnknownReport	boticordnim/typedefs.html#ecUnknownReport	ErrorCode.ecUnknownReport		14
+nim	ecUnsupportedMediaType	boticordnim/typedefs.html#ecUnsupportedMediaType	ErrorCode.ecUnsupportedMediaType		14
+nim	ecUnknownApplication	boticordnim/typedefs.html#ecUnknownApplication	ErrorCode.ecUnknownApplication		14
+nim	ecAutomatedRequestsNotAllowed	boticordnim/typedefs.html#ecAutomatedRequestsNotAllowed	ErrorCode.ecAutomatedRequestsNotAllowed		14
+nim	ecInvalidRating	boticordnim/typedefs.html#ecInvalidRating	ErrorCode.ecInvalidRating		14
+nim	ecDuplicateBot	boticordnim/typedefs.html#ecDuplicateBot	ErrorCode.ecDuplicateBot		14
+nim	ecCannotDetectIp	boticordnim/typedefs.html#ecCannotDetectIp	ErrorCode.ecCannotDetectIp		14
+nim	ecThirdPartyMonitoringFail	boticordnim/typedefs.html#ecThirdPartyMonitoringFail	ErrorCode.ecThirdPartyMonitoringFail		14
+nim	ecThirdPartyMonitoringNotApproved	boticordnim/typedefs.html#ecThirdPartyMonitoringNotApproved	ErrorCode.ecThirdPartyMonitoringNotApproved		14
+nim	ecTurnstileError	boticordnim/typedefs.html#ecTurnstileError	ErrorCode.ecTurnstileError		14
+nim	ecServiceConfiguredIncorrectly	boticordnim/typedefs.html#ecServiceConfiguredIncorrectly	ErrorCode.ecServiceConfiguredIncorrectly		14
+nim	ecUnknownBoost	boticordnim/typedefs.html#ecUnknownBoost	ErrorCode.ecUnknownBoost		14
+nim	ecBoostExpired	boticordnim/typedefs.html#ecBoostExpired	ErrorCode.ecBoostExpired		14
+nim	ecAlreadyCommented	boticordnim/typedefs.html#ecAlreadyCommented	ErrorCode.ecAlreadyCommented		14
+nim	ecReviewRatingsConflict	boticordnim/typedefs.html#ecReviewRatingsConflict	ErrorCode.ecReviewRatingsConflict		14
+nim	ecTooManyConsecutiveMessages	boticordnim/typedefs.html#ecTooManyConsecutiveMessages	ErrorCode.ecTooManyConsecutiveMessages		14
+nim	ecNoServiceBot	boticordnim/typedefs.html#ecNoServiceBot	ErrorCode.ecNoServiceBot		14
+nim	ecAlreadyReported	boticordnim/typedefs.html#ecAlreadyReported	ErrorCode.ecAlreadyReported		14
+nim	ecCannotDeleteOwner	boticordnim/typedefs.html#ecCannotDeleteOwner	ErrorCode.ecCannotDeleteOwner		14
+nim	ecBlockedBot	boticordnim/typedefs.html#ecBlockedBot	ErrorCode.ecBlockedBot		14
+nim	ecUnknownAutomation	boticordnim/typedefs.html#ecUnknownAutomation	ErrorCode.ecUnknownAutomation		14
+nim	ecOnlyOwnerCanAddServer	boticordnim/typedefs.html#ecOnlyOwnerCanAddServer	ErrorCode.ecOnlyOwnerCanAddServer		14
+nim	ecReviewReported	boticordnim/typedefs.html#ecReviewReported	ErrorCode.ecReviewReported		14
+nim	ecLowPremiumLevel	boticordnim/typedefs.html#ecLowPremiumLevel	ErrorCode.ecLowPremiumLevel		14
+nim	ecCaptchaServiceUnavailable	boticordnim/typedefs.html#ecCaptchaServiceUnavailable	ErrorCode.ecCaptchaServiceUnavailable		14
+nim	ecInvalidCaptchaAnswer	boticordnim/typedefs.html#ecInvalidCaptchaAnswer	ErrorCode.ecInvalidCaptchaAnswer		14
+nim	ecResourceNotOwned	boticordnim/typedefs.html#ecResourceNotOwned	ErrorCode.ecResourceNotOwned		14
+nim	ecResourceFetchTimeout	boticordnim/typedefs.html#ecResourceFetchTimeout	ErrorCode.ecResourceFetchTimeout		14
+nim	ecCannotFetchOwner	boticordnim/typedefs.html#ecCannotFetchOwner	ErrorCode.ecCannotFetchOwner		14
+nim	ecTooManyCaptchaAttempts	boticordnim/typedefs.html#ecTooManyCaptchaAttempts	ErrorCode.ecTooManyCaptchaAttempts		14
+nim	ecEmptyReview	boticordnim/typedefs.html#ecEmptyReview	ErrorCode.ecEmptyReview		14
+nim	ErrorCode	boticordnim/typedefs.html#ErrorCode	enum ErrorCode		14
+nim	rsHidden	boticordnim/typedefs.html#rsHidden	ResourceStatus.rsHidden		75
+nim	rsPublic	boticordnim/typedefs.html#rsPublic	ResourceStatus.rsPublic		75
+nim	rsBanned	boticordnim/typedefs.html#rsBanned	ResourceStatus.rsBanned		75
+nim	rsPending	boticordnim/typedefs.html#rsPending	ResourceStatus.rsPending		75
+nim	ResourceStatus	boticordnim/typedefs.html#ResourceStatus	enum ResourceStatus		75
+nim	btModeration	boticordnim/typedefs.html#btModeration	BotTag.btModeration		80
+nim	btCombine	boticordnim/typedefs.html#btCombine	BotTag.btCombine		80
+nim	btUtil	boticordnim/typedefs.html#btUtil	BotTag.btUtil		80
+nim	btFun	boticordnim/typedefs.html#btFun	BotTag.btFun		80
+nim	btMusic	boticordnim/typedefs.html#btMusic	BotTag.btMusic		80
+nim	btEconomy	boticordnim/typedefs.html#btEconomy	BotTag.btEconomy		80
+nim	btLogs	boticordnim/typedefs.html#btLogs	BotTag.btLogs		80
+nim	btLevels	boticordnim/typedefs.html#btLevels	BotTag.btLevels		80
+nim	btNSFW	boticordnim/typedefs.html#btNSFW	BotTag.btNSFW		80
+nim	btCustomizable	boticordnim/typedefs.html#btCustomizable	BotTag.btCustomizable		80
+nim	btRolePlay	boticordnim/typedefs.html#btRolePlay	BotTag.btRolePlay		80
+nim	btMemes	boticordnim/typedefs.html#btMemes	BotTag.btMemes		80
+nim	btGames	boticordnim/typedefs.html#btGames	BotTag.btGames		80
+nim	btAI	boticordnim/typedefs.html#btAI	BotTag.btAI		80
+nim	BotTag	boticordnim/typedefs.html#BotTag	enum BotTag		80
+nim	blDiscord4J	boticordnim/typedefs.html#blDiscord4J	BotLibrary.blDiscord4J		95
+nim	blDiscordcr	boticordnim/typedefs.html#blDiscordcr	BotLibrary.blDiscordcr		95
+nim	blDiscordGO	boticordnim/typedefs.html#blDiscordGO	BotLibrary.blDiscordGO		95
+nim	blDiscordoo	boticordnim/typedefs.html#blDiscordoo	BotLibrary.blDiscordoo		95
+nim	blDSharpPlus	boticordnim/typedefs.html#blDSharpPlus	BotLibrary.blDSharpPlus		95
+nim	blDiscordJs	boticordnim/typedefs.html#blDiscordJs	BotLibrary.blDiscordJs		95
+nim	blDiscordDotNet	boticordnim/typedefs.html#blDiscordDotNet	BotLibrary.blDiscordDotNet		95
+nim	blDiscordPy	boticordnim/typedefs.html#blDiscordPy	BotLibrary.blDiscordPy		95
+nim	blEris	boticordnim/typedefs.html#blEris	BotLibrary.blEris		95
+nim	blJavacord	boticordnim/typedefs.html#blJavacord	BotLibrary.blJavacord		95
+nim	blJDA	boticordnim/typedefs.html#blJDA	BotLibrary.blJDA		95
+nim	blOther	boticordnim/typedefs.html#blOther	BotLibrary.blOther		95
+nim	BotLibrary	boticordnim/typedefs.html#BotLibrary	enum BotLibrary		95
+nim	ultVk	boticordnim/typedefs.html#ultVk	UserLinkType.ultVk		108
+nim	ultTelegram	boticordnim/typedefs.html#ultTelegram	UserLinkType.ultTelegram		108
+nim	ultDonate	boticordnim/typedefs.html#ultDonate	UserLinkType.ultDonate		108
+nim	ultGit	boticordnim/typedefs.html#ultGit	UserLinkType.ultGit		108
+nim	ultCustom	boticordnim/typedefs.html#ultCustom	UserLinkType.ultCustom		108
+nim	UserLinkType	boticordnim/typedefs.html#UserLinkType	enum UserLinkType		108
+nim	stChatting	boticordnim/typedefs.html#stChatting	ServerTag.stChatting		114
+nim	stFun	boticordnim/typedefs.html#stFun	ServerTag.stFun		114
+nim	stGames	boticordnim/typedefs.html#stGames	ServerTag.stGames		114
+nim	stMovies	boticordnim/typedefs.html#stMovies	ServerTag.stMovies		114
+nim	stAnime	boticordnim/typedefs.html#stAnime	ServerTag.stAnime		114
+nim	stArt	boticordnim/typedefs.html#stArt	ServerTag.stArt		114
+nim	stProgramming	boticordnim/typedefs.html#stProgramming	ServerTag.stProgramming		114
+nim	stMusic	boticordnim/typedefs.html#stMusic	ServerTag.stMusic		114
+nim	stNSFW	boticordnim/typedefs.html#stNSFW	ServerTag.stNSFW		114
+nim	stRolePlay	boticordnim/typedefs.html#stRolePlay	ServerTag.stRolePlay		114
+nim	stHumor	boticordnim/typedefs.html#stHumor	ServerTag.stHumor		114
+nim	stGenshin	boticordnim/typedefs.html#stGenshin	ServerTag.stGenshin		114
+nim	stMinecraft	boticordnim/typedefs.html#stMinecraft	ServerTag.stMinecraft		114
+nim	stGTA	boticordnim/typedefs.html#stGTA	ServerTag.stGTA		114
+nim	stCS	boticordnim/typedefs.html#stCS	ServerTag.stCS		114
+nim	stDota	boticordnim/typedefs.html#stDota	ServerTag.stDota		114
+nim	stAmongUs	boticordnim/typedefs.html#stAmongUs	ServerTag.stAmongUs		114
+nim	stFortnite	boticordnim/typedefs.html#stFortnite	ServerTag.stFortnite		114
+nim	stBrawlStars	boticordnim/typedefs.html#stBrawlStars	ServerTag.stBrawlStars		114
+nim	ServerTag	boticordnim/typedefs.html#ServerTag	enum ServerTag		114
+nim	UserBadge	boticordnim/typedefs.html#UserBadge	object UserBadge		135
+nim	UserSocials	boticordnim/typedefs.html#UserSocials	object UserSocials		139
+nim	PartialUser	boticordnim/typedefs.html#PartialUser	type PartialUser		141
+nim	UserProfile	boticordnim/typedefs.html#UserProfile	type UserProfile		145
+nim	ResourceRating	boticordnim/typedefs.html#ResourceRating	object ResourceRating		150
+nim	ResourceBot	boticordnim/typedefs.html#ResourceBot	type ResourceBot		153
+nim	ResourceServer	boticordnim/typedefs.html#ResourceServer	type ResourceServer		166
+nim	MeiliSearchResponse	boticordnim/typedefs.html#MeiliSearchResponse	object MeiliSearchResponse		177
+nim	MeiliIndexedBot	boticordnim/typedefs.html#MeiliIndexedBot	type MeiliIndexedBot		181
+nim	MeiliIndexedServer	boticordnim/typedefs.html#MeiliIndexedServer	type MeiliIndexedServer		188
+nim	MeiliIndexedComment	boticordnim/typedefs.html#MeiliIndexedComment	type MeiliIndexedComment		194
+nim	UpAddedPayload	boticordnim/typedefs.html#UpAddedPayload	object UpAddedPayload		198
+nim	CommentAddedPayload	boticordnim/typedefs.html#CommentAddedPayload	object CommentAddedPayload		200
+nim	CommentEditedPayload	boticordnim/typedefs.html#CommentEditedPayload	type CommentEditedPayload		203
+nim	CommentRemovedPayload	boticordnim/typedefs.html#CommentRemovedPayload	type CommentRemovedPayload		204
+nim	UpAdded	boticordnim/typedefs.html#UpAdded	WebsocketNotifyType.UpAdded		206
+nim	ReviewAdded	boticordnim/typedefs.html#ReviewAdded	WebsocketNotifyType.ReviewAdded		206
+nim	ReviewEdited	boticordnim/typedefs.html#ReviewEdited	WebsocketNotifyType.ReviewEdited		206
+nim	ReviewRemoved	boticordnim/typedefs.html#ReviewRemoved	WebsocketNotifyType.ReviewRemoved		206
+nim	WebsocketNotifyType	boticordnim/typedefs.html#WebsocketNotifyType	enum WebsocketNotifyType		206
+nim	WebsocketNotifyData	boticordnim/typedefs.html#WebsocketNotifyData	object WebsocketNotifyData		211
+nim	wsePing	boticordnim/typedefs.html#wsePing	WebsocketSendEvent.wsePing		216
+nim	wseAuth	boticordnim/typedefs.html#wseAuth	WebsocketSendEvent.wseAuth		216
+nim	WebsocketSendEvent	boticordnim/typedefs.html#WebsocketSendEvent	enum WebsocketSendEvent		216
+nim	wreHello	boticordnim/typedefs.html#wreHello	WebsocketReceiveEvent.wreHello		219
+nim	wrePong	boticordnim/typedefs.html#wrePong	WebsocketReceiveEvent.wrePong		219
+nim	wreNotify	boticordnim/typedefs.html#wreNotify	WebsocketReceiveEvent.wreNotify		219
+nim	WebsocketReceiveEvent	boticordnim/typedefs.html#WebsocketReceiveEvent	enum WebsocketReceiveEvent		219
+nim	WebsocketPacket	boticordnim/typedefs.html#WebsocketPacket	object WebsocketPacket		223
+nim	WebsocketAuthData	boticordnim/typedefs.html#WebsocketAuthData	object WebsocketAuthData		226
+nim	BoticordNotifyEvent	boticordnim/typedefs.html#BoticordNotifyEvent	type BoticordNotifyEvent		228
+nim	NotificatorEvents	boticordnim/typedefs.html#NotificatorEvents	type NotificatorEvents		229
+nim	BoticordNotificator	boticordnim/typedefs.html#BoticordNotificator	type BoticordNotificator		234

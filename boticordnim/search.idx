@@ -1,0 +1,5 @@
+nimTitle	search	boticordnim/search.html	module boticordnim/search		0
+nim	getSearchToken	boticordnim/search.html#getSearchToken	proc getSearchToken(): Future[string]		4
+nim	searchBots	boticordnim/search.html#searchBots,string,string,Positive,Positive,Natural,string,string	proc searchBots(token: string; query = ""; page: Positive = 1;\n           hitsPerPage: Positive = 20; offset: Natural = 0; filter = "";\n           sort = ""): Future[MeiliSearchResponse[MeiliIndexedBot]]		39
+nim	searchServers	boticordnim/search.html#searchServers,string,string,Positive,Positive,Natural,string,string	proc searchServers(token: string; query = ""; page: Positive = 1;\n              hitsPerPage: Positive = 20; offset: Natural = 0; filter = "";\n              sort = ""): Future[MeiliSearchResponse[MeiliIndexedServer]]		44
+nim	searchComments	boticordnim/search.html#searchComments,string,string,Positive,Positive,Natural,string,string	proc searchComments(token: string; query = ""; page: Positive = 1;\n               hitsPerPage: Positive = 20; offset: Natural = 0; filter = "";\n               sort = ""): Future[MeiliSearchResponse[MeiliIndexedComment]]		49

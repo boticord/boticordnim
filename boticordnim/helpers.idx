@@ -1,0 +1,4 @@
+nimTitle	helpers	boticordnim/helpers.html	module boticordnim/helpers		0
+nim	libAgent	boticordnim/helpers.html#libAgent	const libAgent		5
+nim	baseUrl	boticordnim/helpers.html#baseUrl	const baseUrl		6
+nim	apiRequest	boticordnim/helpers.html#apiRequest,string,string,string	proc apiRequest[T](url: string; token = ""; httpMethod = HttpGet; body = ""): Future[\n    T]		22
