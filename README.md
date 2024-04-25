@@ -6,6 +6,8 @@
     Utility for interaction with Boticord API on Nim
 </p>
 
+[API Reference](https://bit0r1n.github.io/boticordnim)
+
 ## Installation
 
 Enter this command to install package
