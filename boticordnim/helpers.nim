@@ -1,5 +1,5 @@
 import typedefs
-import jsony, asyncdispatch, options, httpclient
+import jsonyy, asyncdispatch, options, httpclient
 
 const
   libAgent* = "BoticordNim/1.0.0"

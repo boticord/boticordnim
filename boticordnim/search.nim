@@ -1,4 +1,4 @@
-import asyncdispatch, httpclient, json, jsony
+import asyncdispatch, httpclient, json, jsonyy
 import helpers, typedefs
 
 proc getSearchToken*(): Future[string] {.async.} =
