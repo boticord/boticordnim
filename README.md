@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://cdn.bitor.in/botiheh.png" width="560">
+    <img src="https://cdn.boticord.top/internal/github/boticord-nim.svg" width="560">
 </p>
 
 <p align="center">
