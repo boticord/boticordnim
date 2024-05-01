@@ -15,7 +15,7 @@ proc postBotStats*(token, id: string;
   if servers.isSome: body["servers"] = newJInt(servers.get)
   if shards.isSome: body["shards"] = newJInt(shards.get)
 
-  assert body.len != 0
+  doAssert body.len != 0
 
   result = await apiRequest[ResourceBot](baseUrl & "/bots/" & id & "/stats",
     token, HttpPost, $body)

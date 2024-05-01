@@ -1,5 +1,5 @@
 import asyncdispatch, json, asyncnet, macros, sugar, strutils
-import ws, jsonyy
+import ws, jsony
 import typedefs
 
 const gatewayUrl = "wss://gateway.boticord.top/websocket"
