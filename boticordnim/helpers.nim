@@ -5,19 +5,20 @@ const
   libAgent* = "BoticordNim/1.0.0"
   baseUrl* = "https://api.boticord.top/v3"
 
-proc parseHook*[T](s: string, i: var int, v: var Option[T]) =
-  ## Parse an Option.
-  eatSpace(s, i)
-  if i + 3 < s.len and
-      s[i+0] == 'n' and
-      s[i+1] == 'u' and
-      s[i+2] == 'l' and
-      s[i+3] == 'l':
-    i += 4
-    return
-  var e: T
-  parseHook(s, i, e)
-  v = some(e)
+when not defined(nimdoc):
+  proc parseHook*[T](s: string, i: var int, v: var Option[T]) =
+    ## Parse an Option.
+    eatSpace(s, i)
+    if i + 3 < s.len and
+        s[i+0] == 'n' and
+        s[i+1] == 'u' and
+        s[i+2] == 'l' and
+        s[i+3] == 'l':
+      i += 4
+      return
+    var e: T
+    parseHook(s, i, e)
+    v = some(e)
 
 proc handleErrors[T](response: APIResponse[T]) =
   if response.ok == true: return
