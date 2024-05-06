@@ -6,13 +6,13 @@
     Utility for interaction with Boticord API on Nim
 </p>
 
-[API Reference](https://bit0r1n.github.io/boticordnim)
+[API Reference](https://boticord.github.io/boticordnim/)
 
 ## Installation
 
 Enter this command to install package
 ```
-nimble install https://github.com/bit0r1n/boticordnim
+nimble install https://github.com/boticord/boticordnim
 ```
 
 ## Examples
