@@ -5,7 +5,7 @@ const
   libAgent* = "BoticordNim/1.0.0"
   baseUrl* = "https://api.boticord.top/v3"
 
-when not defined(nimdoc):
+when not defined(nimdoc) or defined(defineOptionHook):
   proc parseHook*[T](s: string, i: var int, v: var Option[T]) =
     ## Parse an Option.
     eatSpace(s, i)
