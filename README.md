@@ -15,6 +15,10 @@ Enter this command to install package
 nimble install https://github.com/boticord/boticordnim
 ```
 
+Or add `"https://github.com/boticord/boticordnim"` in your nimble `requires`
+
+If you encounter a problem that application can't find a hook for optional values, then add `-d:defineOptionHook` during compilation
+
 ## Examples
 
 Get info from some resources
