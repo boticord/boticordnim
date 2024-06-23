@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.0.2"
+version       = "1.0.3"
 author        = "bit0r1n"
 description   = "Boticord API wrapper on Nim"
 license       = "MIT"
