@@ -98,7 +98,8 @@ proc connect*(n: BoticordNotificator) {.async.} =
   await n.handleMessages()
 
 macro event*(notificator: BoticordNotificator, fn: untyped): untyped =
-  ## Register new listener for event
+  ## .. importdoc:: typedefs.nim
+  ## Register new listener for event. Reference to [NotificatorEvents] to see all supported events
   let
     eventName = fn[0]
     params = fn[3]
