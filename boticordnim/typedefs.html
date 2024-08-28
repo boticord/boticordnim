@@ -55,6 +55,16 @@
   ok*: bool
   errors*: Option[seq[RequestError]]
   result*: Option[T]">APIResponse</a></li>
+<li><a class="reference" href="#BaseResourceEntity" title="BaseResourceEntity = ref object of RootObj
+  id*, name*, shortDescription*, description*, inviteLink*, owner*, lastFetch*: string
+  avatar*, website*: Option[string]
+  standardBannerID*, upCount*: int
+  showDefaultBanner*: Option[bool]
+  status*: ResourceStatus
+  ratings*: seq[ResourceRating]
+  premium*: PremiumResourceFeatures
+  reviewsActionsDisabled*: bool
+  ups*: Option[seq[UpEntity]]">BaseResourceEntity</a></li>
 <li><a class="reference" href="#BoticordNotificator" title="BoticordNotificator = ref object
   token*: string
   connection*: WebSocket
@@ -118,38 +128,41 @@
   comment_added*: BoticordNotifyEvent[CommentAddedPayload]
   comment_edited*: BoticordNotifyEvent[CommentEditedPayload]
   comment_removed*: BoticordNotifyEvent[CommentRemovedPayload]">NotificatorEvents</a></li>
+<li><a class="reference" href="#NotifySettings" title="NotifySettings = ref object
+  enabled*: bool">NotifySettings</a></li>
 <li><a class="reference" href="#PartialUser" title="PartialUser = ref object of RootObj
   username*, discriminator*, id*: string
   avatar*, description*, shortDescription*: Option[string]
   socials*: UserSocials">PartialUser</a></li>
+<li><a class="reference" href="#PremiumFeature" title="PremiumFeature = enum
+  pfUpMultiplierOne = &quot;up_multiplier_one&quot;, pfAutoFetch = &quot;fetch&quot;,
+  pfVanityInvite = &quot;vanity_invite&quot;, pfUpMultiplierTwo = &quot;up_multiplier_two&quot;,
+  pfSplash = &quot;splash&quot;, pfBanner = &quot;banner&quot;,
+  pfUpMultiplierThree = &quot;up_multiplier_three&quot;, pfVanityUrl = &quot;vanity_url&quot;,
+  pfUpBot = &quot;up_bot&quot;, pfInfiniteVanityUrl = &quot;infinite_vanity_url&quot;">PremiumFeature</a></li>
+<li><a class="reference" href="#PremiumResourceFeatures" title="PremiumResourceFeatures = ref object
+  active*, autoFetch*: bool
+  splashURL*, bannerURL*, vanityInvite*, vanityURL*: Option[string]
+  features*: seq[PremiumFeature]">PremiumResourceFeatures</a></li>
 <li><a class="reference" href="#RequestError" title="RequestError = object
   code*: ErrorCode
   message*: string">RequestError</a></li>
-<li><a class="reference" href="#ResourceBot" title="ResourceBot = ref object
-  id*, name*, shortDescription*, description*, inviteLink*, owner*, prefix*,
-  discriminator*, createdDate*: string
-  avatar*: Option[string]
-  shortLink*: Option[string]
+<li><a class="reference" href="#ResourceBot" title="ResourceBot = ref object of BaseResourceEntity
+  prefix*, discriminator*, createdDate*: string
   supportServerInviteCode*: Option[string]
-  website*: Option[string]
-  status*: ResourceStatus
-  ratings*: seq[ResourceRating]
-  library*: Option[BotLibrary]
-  guilds*, shards*, members*: Option[int]
-  tags*: seq[BotTag]
   developers*: seq[PartialUser]
-  upCount*: int">ResourceBot</a></li>
+  library*: Option[BotLibrary]
+  guilds*, members*, shards*: Option[int]
+  tags*: seq[BotTag]
+  notify*: Option[NotifySettings]">ResourceBot</a></li>
 <li><a class="reference" href="#ResourceRating" title="ResourceRating = object
   count*: int
   rating*: range[1 .. 5] = 1">ResourceRating</a></li>
-<li><a class="reference" href="#ResourceServer" title="ResourceServer = ref object
-  id*, name*, description*, shortDescription*, invite*, inviteLink*, owner*: string
-  avatar*, bannerURL*, shortLink*, website*: Option[string]
-  rating*, standardBannerID*, upCount*: int
-  memberCount*: Option[int]
+<li><a class="reference" href="#ResourceServer" title="ResourceServer = ref object of BaseResourceEntity
+  memberCount*: int
+  bannerURL*, banner*: Option[string]
+  createdDate*: string
   tags*: seq[ServerTag]
-  status*: ResourceStatus
-  ratings*: seq[ResourceRating]
   moderators*: seq[PartialUser]">ResourceServer</a></li>
 <li><a class="reference" href="#ResourceStatus" title="ResourceStatus = enum
   rsHidden, rsPublic, rsBanned, rsPending">ResourceStatus</a></li>
@@ -159,6 +172,8 @@
   stCS, stDota, stAmongUs, stFortnite, stBrawlStars">ServerTag</a></li>
 <li><a class="reference" href="#UpAddedPayload" title="UpAddedPayload = object
   upCount*: float">UpAddedPayload</a></li>
+<li><a class="reference" href="#UpEntity" title="UpEntity = ref object
+  id*, expires*: string">UpEntity</a></li>
 <li><a class="reference" href="#UserBadge" title="UserBadge = object
   id*: int
   name*, assetURL*: string">UserBadge</a></li>
@@ -217,6 +232,25 @@
 
   </dd>
 </div>
+<div id="BaseResourceEntity">
+  <dt><pre><a href="typedefs.html#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
+  <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortDescription</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">description</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">inviteLink</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">owner</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">lastFetch</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">avatar</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">website</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
+  <span class="Identifier">standardBannerID</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">upCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">showDefaultBanner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">bool</span><span class="Other">]</span>
+  <span class="Identifier">status</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#ResourceStatus"><span class="Identifier">ResourceStatus</span></a>
+  <span class="Identifier">ratings</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ResourceRating"><span class="Identifier">ResourceRating</span></a><span class="Other">]</span>
+  <span class="Identifier">premium</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#PremiumResourceFeatures"><span class="Identifier">PremiumResourceFeatures</span></a>
+  <span class="Identifier">reviewsActionsDisabled</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
+  <span class="Identifier">ups</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#UpEntity"><span class="Identifier">UpEntity</span></a><span class="Other">]</span><span class="Other">]</span></pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L178" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L178" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
 <div id="BoticordNotificator">
   <dt><pre><a href="typedefs.html#BoticordNotificator"><span class="Identifier">BoticordNotificator</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">token</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
@@ -226,8 +260,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L234" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L234" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L260" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L260" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -236,8 +270,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L228" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L228" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L254" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L254" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -283,8 +317,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L200" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L200" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L226" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L226" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -293,8 +327,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L203" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L203" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L229" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L229" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -303,8 +337,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L204" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L204" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L230" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L230" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -347,8 +381,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L181" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L181" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L207" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L207" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -359,8 +393,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L194" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L194" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L220" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L220" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -374,8 +408,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L188" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L188" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L214" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L214" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -387,8 +421,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L177" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L177" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L203" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L203" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -401,8 +435,19 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L229" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L229" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L255" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L255" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+<div id="NotifySettings">
+  <dt><pre><a href="typedefs.html#NotifySettings"><span class="Identifier">NotifySettings</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <span class="Identifier">enabled</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L169" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L169" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -419,6 +464,34 @@
 
   </dd>
 </div>
+<div id="PremiumFeature">
+  <dt><pre><a href="typedefs.html#PremiumFeature"><span class="Identifier">PremiumFeature</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">pfUpMultiplierOne</span> <span class="Other">=</span> <span class="StringLit">&quot;up_multiplier_one&quot;</span><span class="Other">,</span> <span class="Identifier">pfAutoFetch</span> <span class="Other">=</span> <span class="StringLit">&quot;fetch&quot;</span><span class="Other">,</span>
+  <span class="Identifier">pfVanityInvite</span> <span class="Other">=</span> <span class="StringLit">&quot;vanity_invite&quot;</span><span class="Other">,</span> <span class="Identifier">pfUpMultiplierTwo</span> <span class="Other">=</span> <span class="StringLit">&quot;up_multiplier_two&quot;</span><span class="Other">,</span>
+  <span class="Identifier">pfSplash</span> <span class="Other">=</span> <span class="StringLit">&quot;splash&quot;</span><span class="Other">,</span> <span class="Identifier">pfBanner</span> <span class="Other">=</span> <span class="StringLit">&quot;banner&quot;</span><span class="Other">,</span>
+  <span class="Identifier">pfUpMultiplierThree</span> <span class="Other">=</span> <span class="StringLit">&quot;up_multiplier_three&quot;</span><span class="Other">,</span> <span class="Identifier">pfVanityUrl</span> <span class="Other">=</span> <span class="StringLit">&quot;vanity_url&quot;</span><span class="Other">,</span>
+  <span class="Identifier">pfUpBot</span> <span class="Other">=</span> <span class="StringLit">&quot;up_bot&quot;</span><span class="Other">,</span> <span class="Identifier">pfInfiniteVanityUrl</span> <span class="Other">=</span> <span class="StringLit">&quot;infinite_vanity_url&quot;</span></pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L150" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L150" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+<div id="PremiumResourceFeatures">
+  <dt><pre><a href="typedefs.html#PremiumResourceFeatures"><span class="Identifier">PremiumResourceFeatures</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <span class="Identifier">active</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">autoFetch</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
+  <span class="Identifier">splashURL</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">bannerURL</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">vanityInvite</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">vanityURL</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
+  <span class="Identifier">features</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#PremiumFeature"><span class="Identifier">PremiumFeature</span></a><span class="Other">]</span></pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L164" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L164" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
 <div id="RequestError">
   <dt><pre><a href="typedefs.html#RequestError"><span class="Identifier">RequestError</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">code</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#ErrorCode"><span class="Identifier">ErrorCode</span></a>
@@ -432,25 +505,19 @@
   </dd>
 </div>
 <div id="ResourceBot">
-  <dt><pre><a href="typedefs.html#ResourceBot"><span class="Identifier">ResourceBot</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
-  <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortDescription</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">description</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">inviteLink</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">owner</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">prefix</span><span class="Operator">*</span><span class="Other">,</span>
-  <span class="Identifier">discriminator</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">createdDate</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
-  <span class="Identifier">avatar</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
-  <span class="Identifier">shortLink</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
+  <dt><pre><a href="typedefs.html#ResourceBot"><span class="Identifier">ResourceBot</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="typedefs.html#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a>
+  <span class="Identifier">prefix</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">discriminator</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">createdDate</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">supportServerInviteCode</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
-  <span class="Identifier">website</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
-  <span class="Identifier">status</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#ResourceStatus"><span class="Identifier">ResourceStatus</span></a>
-  <span class="Identifier">ratings</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ResourceRating"><span class="Identifier">ResourceRating</span></a><span class="Other">]</span>
-  <span class="Identifier">library</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="typedefs.html#BotLibrary"><span class="Identifier">BotLibrary</span></a><span class="Other">]</span>
-  <span class="Identifier">guilds</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shards</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">members</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span>
-  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#BotTag"><span class="Identifier">BotTag</span></a><span class="Other">]</span>
   <span class="Identifier">developers</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#PartialUser"><span class="Identifier">PartialUser</span></a><span class="Other">]</span>
-  <span class="Identifier">upCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+  <span class="Identifier">library</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="typedefs.html#BotLibrary"><span class="Identifier">BotLibrary</span></a><span class="Other">]</span>
+  <span class="Identifier">guilds</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">members</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shards</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span>
+  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#BotTag"><span class="Identifier">BotTag</span></a><span class="Other">]</span>
+  <span class="Identifier">notify</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="typedefs.html#NotifySettings"><span class="Identifier">NotifySettings</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L153" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L153" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L188" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L188" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -461,26 +528,23 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L150" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L150" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L175" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L175" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
 <div id="ResourceServer">
-  <dt><pre><a href="typedefs.html#ResourceServer"><span class="Identifier">ResourceServer</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
-  <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">description</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortDescription</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">invite</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">inviteLink</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">owner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
-  <span class="Identifier">avatar</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">bannerURL</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortLink</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">website</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
-  <span class="Identifier">rating</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">standardBannerID</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">upCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
-  <span class="Identifier">memberCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span>
+  <dt><pre><a href="typedefs.html#ResourceServer"><span class="Identifier">ResourceServer</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="typedefs.html#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a>
+  <span class="Identifier">memberCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">bannerURL</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">banner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
+  <span class="Identifier">createdDate</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ServerTag"><span class="Identifier">ServerTag</span></a><span class="Other">]</span>
-  <span class="Identifier">status</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#ResourceStatus"><span class="Identifier">ResourceStatus</span></a>
-  <span class="Identifier">ratings</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ResourceRating"><span class="Identifier">ResourceRating</span></a><span class="Other">]</span>
   <span class="Identifier">moderators</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#PartialUser"><span class="Identifier">PartialUser</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L166" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L166" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L196" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L196" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -514,8 +578,19 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L198" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L198" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L224" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L224" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+<div id="UpEntity">
+  <dt><pre><a href="typedefs.html#UpEntity"><span class="Identifier">UpEntity</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">expires</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+  <dd>
+    
+    
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L172" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L172" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -572,8 +647,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L226" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L226" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L252" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L252" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -585,8 +660,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L211" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L211" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L237" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L237" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -597,8 +672,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L206" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L206" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L232" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L232" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -609,8 +684,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L223" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L223" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L249" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L249" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -620,8 +695,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L219" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L219" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L245" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L245" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -631,8 +706,8 @@
   <dd>
     
     
-    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L216" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L216" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/boticord/boticordnim/tree/master/boticordnim/typedefs.nim#L242" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/boticord/boticordnim/edit/devel/boticordnim/typedefs.nim#L242" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -646,7 +721,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2024-08-02 10:00:03 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2024-08-28 19:04:05 UTC</small>
       </div>
     </div>
   </div>

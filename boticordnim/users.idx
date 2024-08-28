@@ -1,2 +1,2 @@
 nimTitle	users	boticordnim/users.html	module boticordnim/users		0
-nim	getUser	boticordnim/users.html#getUser,string	proc getUser(id: string): Future[UserProfile]		5
+nim	getUser	boticordnim/users.html#getUser,string,string	proc getUser(id: string; token = ""): Future[UserProfile]		5

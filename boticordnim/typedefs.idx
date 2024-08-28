@@ -126,32 +126,47 @@ nim	UserBadge	boticordnim/typedefs.html#UserBadge	object UserBadge		135
 nim	UserSocials	boticordnim/typedefs.html#UserSocials	object UserSocials		139
 nim	PartialUser	boticordnim/typedefs.html#PartialUser	type PartialUser		141
 nim	UserProfile	boticordnim/typedefs.html#UserProfile	type UserProfile		145
-nim	ResourceRating	boticordnim/typedefs.html#ResourceRating	object ResourceRating		150
-nim	ResourceBot	boticordnim/typedefs.html#ResourceBot	type ResourceBot		153
-nim	ResourceServer	boticordnim/typedefs.html#ResourceServer	type ResourceServer		166
-nim	MeiliSearchResponse	boticordnim/typedefs.html#MeiliSearchResponse	object MeiliSearchResponse		177
-nim	MeiliIndexedBot	boticordnim/typedefs.html#MeiliIndexedBot	type MeiliIndexedBot		181
-nim	MeiliIndexedServer	boticordnim/typedefs.html#MeiliIndexedServer	type MeiliIndexedServer		188
-nim	MeiliIndexedComment	boticordnim/typedefs.html#MeiliIndexedComment	type MeiliIndexedComment		194
-nim	UpAddedPayload	boticordnim/typedefs.html#UpAddedPayload	object UpAddedPayload		198
-nim	CommentAddedPayload	boticordnim/typedefs.html#CommentAddedPayload	object CommentAddedPayload		200
-nim	CommentEditedPayload	boticordnim/typedefs.html#CommentEditedPayload	type CommentEditedPayload		203
-nim	CommentRemovedPayload	boticordnim/typedefs.html#CommentRemovedPayload	type CommentRemovedPayload		204
-nim	UpAdded	boticordnim/typedefs.html#UpAdded	WebsocketNotifyType.UpAdded		206
-nim	ReviewAdded	boticordnim/typedefs.html#ReviewAdded	WebsocketNotifyType.ReviewAdded		206
-nim	ReviewEdited	boticordnim/typedefs.html#ReviewEdited	WebsocketNotifyType.ReviewEdited		206
-nim	ReviewRemoved	boticordnim/typedefs.html#ReviewRemoved	WebsocketNotifyType.ReviewRemoved		206
-nim	WebsocketNotifyType	boticordnim/typedefs.html#WebsocketNotifyType	enum WebsocketNotifyType		206
-nim	WebsocketNotifyData	boticordnim/typedefs.html#WebsocketNotifyData	object WebsocketNotifyData		211
-nim	wsePing	boticordnim/typedefs.html#wsePing	WebsocketSendEvent.wsePing		216
-nim	wseAuth	boticordnim/typedefs.html#wseAuth	WebsocketSendEvent.wseAuth		216
-nim	WebsocketSendEvent	boticordnim/typedefs.html#WebsocketSendEvent	enum WebsocketSendEvent		216
-nim	wreHello	boticordnim/typedefs.html#wreHello	WebsocketReceiveEvent.wreHello		219
-nim	wrePong	boticordnim/typedefs.html#wrePong	WebsocketReceiveEvent.wrePong		219
-nim	wreNotify	boticordnim/typedefs.html#wreNotify	WebsocketReceiveEvent.wreNotify		219
-nim	WebsocketReceiveEvent	boticordnim/typedefs.html#WebsocketReceiveEvent	enum WebsocketReceiveEvent		219
-nim	WebsocketPacket	boticordnim/typedefs.html#WebsocketPacket	object WebsocketPacket		223
-nim	WebsocketAuthData	boticordnim/typedefs.html#WebsocketAuthData	object WebsocketAuthData		226
-nim	BoticordNotifyEvent	boticordnim/typedefs.html#BoticordNotifyEvent	type BoticordNotifyEvent		228
-nim	NotificatorEvents	boticordnim/typedefs.html#NotificatorEvents	type NotificatorEvents		229
-nim	BoticordNotificator	boticordnim/typedefs.html#BoticordNotificator	type BoticordNotificator		234
+nim	pfUpMultiplierOne	boticordnim/typedefs.html#pfUpMultiplierOne	PremiumFeature.pfUpMultiplierOne		150
+nim	pfAutoFetch	boticordnim/typedefs.html#pfAutoFetch	PremiumFeature.pfAutoFetch		150
+nim	pfVanityInvite	boticordnim/typedefs.html#pfVanityInvite	PremiumFeature.pfVanityInvite		150
+nim	pfUpMultiplierTwo	boticordnim/typedefs.html#pfUpMultiplierTwo	PremiumFeature.pfUpMultiplierTwo		150
+nim	pfSplash	boticordnim/typedefs.html#pfSplash	PremiumFeature.pfSplash		150
+nim	pfBanner	boticordnim/typedefs.html#pfBanner	PremiumFeature.pfBanner		150
+nim	pfUpMultiplierThree	boticordnim/typedefs.html#pfUpMultiplierThree	PremiumFeature.pfUpMultiplierThree		150
+nim	pfVanityUrl	boticordnim/typedefs.html#pfVanityUrl	PremiumFeature.pfVanityUrl		150
+nim	pfUpBot	boticordnim/typedefs.html#pfUpBot	PremiumFeature.pfUpBot		150
+nim	pfInfiniteVanityUrl	boticordnim/typedefs.html#pfInfiniteVanityUrl	PremiumFeature.pfInfiniteVanityUrl		150
+nim	PremiumFeature	boticordnim/typedefs.html#PremiumFeature	enum PremiumFeature		150
+nim	PremiumResourceFeatures	boticordnim/typedefs.html#PremiumResourceFeatures	type PremiumResourceFeatures		164
+nim	NotifySettings	boticordnim/typedefs.html#NotifySettings	type NotifySettings		169
+nim	UpEntity	boticordnim/typedefs.html#UpEntity	type UpEntity		172
+nim	ResourceRating	boticordnim/typedefs.html#ResourceRating	object ResourceRating		175
+nim	BaseResourceEntity	boticordnim/typedefs.html#BaseResourceEntity	type BaseResourceEntity		178
+nim	ResourceBot	boticordnim/typedefs.html#ResourceBot	type ResourceBot		188
+nim	ResourceServer	boticordnim/typedefs.html#ResourceServer	type ResourceServer		196
+nim	MeiliSearchResponse	boticordnim/typedefs.html#MeiliSearchResponse	object MeiliSearchResponse		203
+nim	MeiliIndexedBot	boticordnim/typedefs.html#MeiliIndexedBot	type MeiliIndexedBot		207
+nim	MeiliIndexedServer	boticordnim/typedefs.html#MeiliIndexedServer	type MeiliIndexedServer		214
+nim	MeiliIndexedComment	boticordnim/typedefs.html#MeiliIndexedComment	type MeiliIndexedComment		220
+nim	UpAddedPayload	boticordnim/typedefs.html#UpAddedPayload	object UpAddedPayload		224
+nim	CommentAddedPayload	boticordnim/typedefs.html#CommentAddedPayload	object CommentAddedPayload		226
+nim	CommentEditedPayload	boticordnim/typedefs.html#CommentEditedPayload	type CommentEditedPayload		229
+nim	CommentRemovedPayload	boticordnim/typedefs.html#CommentRemovedPayload	type CommentRemovedPayload		230
+nim	UpAdded	boticordnim/typedefs.html#UpAdded	WebsocketNotifyType.UpAdded		232
+nim	ReviewAdded	boticordnim/typedefs.html#ReviewAdded	WebsocketNotifyType.ReviewAdded		232
+nim	ReviewEdited	boticordnim/typedefs.html#ReviewEdited	WebsocketNotifyType.ReviewEdited		232
+nim	ReviewRemoved	boticordnim/typedefs.html#ReviewRemoved	WebsocketNotifyType.ReviewRemoved		232
+nim	WebsocketNotifyType	boticordnim/typedefs.html#WebsocketNotifyType	enum WebsocketNotifyType		232
+nim	WebsocketNotifyData	boticordnim/typedefs.html#WebsocketNotifyData	object WebsocketNotifyData		237
+nim	wsePing	boticordnim/typedefs.html#wsePing	WebsocketSendEvent.wsePing		242
+nim	wseAuth	boticordnim/typedefs.html#wseAuth	WebsocketSendEvent.wseAuth		242
+nim	WebsocketSendEvent	boticordnim/typedefs.html#WebsocketSendEvent	enum WebsocketSendEvent		242
+nim	wreHello	boticordnim/typedefs.html#wreHello	WebsocketReceiveEvent.wreHello		245
+nim	wrePong	boticordnim/typedefs.html#wrePong	WebsocketReceiveEvent.wrePong		245
+nim	wreNotify	boticordnim/typedefs.html#wreNotify	WebsocketReceiveEvent.wreNotify		245
+nim	WebsocketReceiveEvent	boticordnim/typedefs.html#WebsocketReceiveEvent	enum WebsocketReceiveEvent		245
+nim	WebsocketPacket	boticordnim/typedefs.html#WebsocketPacket	object WebsocketPacket		249
+nim	WebsocketAuthData	boticordnim/typedefs.html#WebsocketAuthData	object WebsocketAuthData		252
+nim	BoticordNotifyEvent	boticordnim/typedefs.html#BoticordNotifyEvent	type BoticordNotifyEvent		254
+nim	NotificatorEvents	boticordnim/typedefs.html#NotificatorEvents	type NotificatorEvents		255
+nim	BoticordNotificator	boticordnim/typedefs.html#BoticordNotificator	type BoticordNotificator		260

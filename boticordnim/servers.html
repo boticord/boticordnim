@@ -55,7 +55,7 @@
     <summary><a class="reference reference-toplevel" href="#12" id="62">Procs</a></summary>
     <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">getServer
-  <li><a class="reference" href="#getServer%2Cstring" title="getServer(id: string): Future[ResourceServer]">getServer(id: string): Future[ResourceServer]</a></li>
+  <li><a class="reference" href="#getServer%2Cstring%2Cstring" title="getServer(id: string; token = &quot;&quot;): Future[ResourceServer]">getServer(id: string; token = &quot;&quot;): Future[ResourceServer]</a></li>
 
 </ul>
 
@@ -83,9 +83,9 @@
   <h1><a class="toc-backref" href="#12">Procs</a></h1>
   <dl class="item">
     <div id="getServer-procs-all">
-  <div id="getServer,string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#getServer%2Cstring"><span class="Identifier">getServer</span></a><span class="Other">(</span><span class="Identifier">id</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Future</span><span class="Other">[</span><a href="typedefs.html#ResourceServer"><span class="Identifier">ResourceServer</span></a><span class="Other">]</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">stackTrace</span><span class="Other">:</span> <span class="DecNumber">false</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+  <div id="getServer,string,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#getServer%2Cstring%2Cstring"><span class="Identifier">getServer</span></a><span class="Other">(</span><span class="Identifier">id</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">token</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Future</span><span class="Other">[</span><a href="typedefs.html#ResourceServer"><span class="Identifier">ResourceServer</span></a><span class="Other">]</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">stackTrace</span><span class="Other">:</span> <span class="DecNumber">false</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -107,7 +107,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2024-08-02 10:00:03 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2024-08-28 19:04:05 UTC</small>
       </div>
     </div>
   </div>
