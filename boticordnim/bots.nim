@@ -2,9 +2,10 @@ import asyncdispatch, httpclient, json, options
 from typedefs import ResourceBot
 import helpers
 
-proc getBot*(id: string): Future[ResourceBot] {.async.} =
+proc getBot*(id: string, token = ""): Future[ResourceBot] {.async.} =
   ## Get information about the bot
-  result = await apiRequest[ResourceBot](baseUrl & "/bots/" & id)
+  result = await apiRequest[ResourceBot](url =  baseUrl & "/bots/" & id,
+    token = token)
 
 proc postBotStats*(token, id: string;
   servers, shards, members = none int): Future[ResourceBot] {.async.} =

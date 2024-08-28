@@ -19,6 +19,9 @@ Or add `"https://github.com/boticord/boticordnim"` in your nimble `requires`
 
 If you encounter a problem that application can't find a hook for optional values, then add `-d:defineOptionHook` during compilation
 
+> [!NOTE]
+> It's recommended to provide token where it is possible in resources (bots, servers, users) methods
+
 ## Examples
 
 Get info from some resources

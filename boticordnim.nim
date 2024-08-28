@@ -6,6 +6,8 @@
 ##   - `bots` Includes methods to get data about specific bot or post statistics of your own bots
 ##   - `servers` and `users` Includes methods to get data about specific server and user profile respectively
 ##   - `search` Includes methods to perform search among server, bots and comments of previously mentioned resources
+## **It's recommended to provide token where it is possible in resources methods**
+##
 ## * Gateway
 ##   - `notifications` Includes method to start receiving events from Boticord in real-time
 ##

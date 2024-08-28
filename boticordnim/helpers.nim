@@ -48,5 +48,4 @@ proc apiRequest*[T](url: string; token = "", httpMethod = HttpGet, body = ""): F
 
   handleErrors(parsedResponse)
 
-
   return parsedResponse.result.get

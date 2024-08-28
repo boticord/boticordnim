@@ -147,31 +147,57 @@ type
     bots*: seq[ResourceBot]
     servers*: seq[ResourceServer]
 
+  PremiumFeature* = enum
+    pfUpMultiplierOne = "up_multiplier_one"
+    pfAutoFetch = "fetch"
+    pfVanityInvite = "vanity_invite"
+
+    pfUpMultiplierTwo = "up_multiplier_two"
+    pfSplash = "splash"
+    pfBanner = "banner"
+
+    pfUpMultiplierThree = "up_multiplier_three"
+    pfVanityUrl = "vanity_url"
+    pfUpBot = "up_bot"
+
+    pfInfiniteVanityUrl = "infinite_vanity_url"
+  PremiumResourceFeatures* = ref object
+    active*, autoFetch*: bool
+    splashURL*, bannerURL*, vanityInvite*, vanityURL*: Option[string]
+    features*: seq[PremiumFeature]
+
+  NotifySettings* = ref object
+    enabled*: bool
+
+  UpEntity* = ref object
+    id*, expires*: string
+
   ResourceRating* = object
     count*: int
     rating*: range[1 .. 5] = 1
-  ResourceBot* = ref object
-    id*, name*, shortDescription*, description*, inviteLink*, owner*, prefix*, discriminator*, createdDate*: string
-    avatar*: Option[string]
-    shortLink*: Option[string]
+  BaseResourceEntity* = ref object of RootObj
+    id*, name*, shortDescription*, description*, inviteLink*, owner*, lastFetch*: string
+    avatar*, website*: Option[string]
+    standardBannerID*, upCount*: int
+    showDefaultBanner*: Option[bool]
+    status*: ResourceStatus
+    ratings*: seq[ResourceRating]
+    premium*: PremiumResourceFeatures
+    reviewsActionsDisabled*: bool
+    ups*: Option[seq[UpEntity]]
+  ResourceBot* = ref object of BaseResourceEntity
+    prefix*, discriminator*, createdDate*: string
     supportServerInviteCode*: Option[string]
-    website*: Option[string]
-    status*: ResourceStatus
-    ratings*: seq[ResourceRating]
-    library*: Option[BotLibrary]
-    guilds*, shards*, members*: Option[int]
-    tags*: seq[BotTag]
     developers*: seq[PartialUser]
-    upCount*: int
-  ResourceServer* = ref object
-    id*, name*, description*,
-      shortDescription*, invite*, inviteLink*, owner*: string
-    avatar*, bannerURL*, shortLink*, website*: Option[string]
-    rating*, standardBannerID*, upCount*: int
-    memberCount*: Option[int]
+    library*: Option[BotLibrary]
+    guilds*, members*, shards*: Option[int]
+    tags*: seq[BotTag]
+    notify*: Option[NotifySettings]
+  ResourceServer* = ref object of BaseResourceEntity
+    memberCount*: int
+    bannerURL*, banner*: Option[string]
+    createdDate*: string
     tags*: seq[ServerTag]
-    status*: ResourceStatus
-    ratings*: seq[ResourceRating]
     moderators*: seq[PartialUser]
   
   MeiliSearchResponse*[T] = object
