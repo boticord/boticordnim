@@ -1,14 +1,16 @@
 import asyncdispatch, httpclient, json, options
 from typedefs import ResourceBot
 import helpers
+import jsony
 
 proc getBot*(id: string, token = ""): Future[ResourceBot] {.async.} =
   ## Get information about the bot
-  result = await apiRequest[ResourceBot](url =  baseUrl & "/bots/" & id,
+  let apiResponse = await apiRequest(url =  baseUrl & "/bots/" & id,
     token = token)
+  result = ($apiResponse).fromJson(ResourceBot)
 
 proc postBotStats*(token, id: string;
-  servers, shards, members = none int): Future[ResourceBot] {.async.} =
+  servers = none int; shards = none int; members = none int): Future[ResourceBot] {.async.} =
   ## Post statistics information for the bot
   var body = %*{}
 
@@ -18,5 +20,6 @@ proc postBotStats*(token, id: string;
 
   doAssert body.len != 0
 
-  result = await apiRequest[ResourceBot](baseUrl & "/bots/" & id & "/stats",
+  let apiResponse = await apiRequest(baseUrl & "/bots/" & id & "/stats",
     token, HttpPost, $body)
+  result = ($apiResponse).fromJson(ResourceBot)

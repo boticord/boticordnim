@@ -51,6 +51,10 @@ macro callEvent(n: BoticordNotificator, event: static[WebsocketNotifyType], args
 proc close*(n: BoticordNotificator) =
   n.stop = true
   n.connection.close()
+  n.connection = nil
+
+proc decodeEvent[T](node: JsonNode): WebsocketNotifyData[T] =
+  result = fromJson($node, WebsocketNotifyData[T])
 
 proc handleMessages(n: BoticordNotificator) {.async.} =
   while not n.closed:
@@ -66,36 +70,41 @@ proc handleMessages(n: BoticordNotificator) {.async.} =
       of "notify":
         case data["data"]["type"].getStr():
         of "up_added":
-          let eventData = fromJson($data["data"], WebsocketNotifyData[UpAddedPayload])
+          let eventData = decodeEvent[UpAddedPayload](data["data"])
           n.callEvent(UpAdded, eventData)
         of "comment_added":
-          let eventData = fromJson($data["data"], WebsocketNotifyData[CommentAddedPayload])
+          let eventData = decodeEvent[CommentAddedPayload](data["data"])
           n.callEvent(ReviewAdded, eventData)
         of "comment_edited":
-          let eventData = fromJson($data["data"], WebsocketNotifyData[CommentEditedPayload])
+          let eventData = decodeEvent[CommentEditedPayload](data["data"])
           n.callEvent(ReviewEdited, eventData)
         of "comment_removed":
-          let eventData = fromJson($data["data"], WebsocketNotifyData[CommentRemovedPayload])
+          let eventData = decodeEvent[CommentRemovedPayload](data["data"])
           n.callEvent(ReviewRemoved, eventData)
         else:
           discard
       else:
         discard
 
-var pingLoop: proc(n: BoticordNotificator) {.async.}
-pingLoop = proc(n: BoticordNotificator) {.async.} =
-  if n.closed: return
-  await n.ping()
-  await sleepAsync(60_000)
-  await n.pingLoop()
+proc pingLoop(n: BoticordNotificator) {.async.} =
+  while not n.closed:
+    await sleepAsync(60_000)
+    await n.ping()
 
 proc connect*(n: BoticordNotificator) {.async.} =
   ## Connect to gateway service and listen messages
-  n.stop = false
-  n.connection = await newWebSocket(gatewayUrl)
-  await n.identify()
-  asyncCheck n.pingLoop()
-  await n.handleMessages()
+  while true:
+    try:
+      n.stop = false
+      n.connection = await newWebSocket(gatewayUrl)
+      await n.identify()
+      let ping = n.pingLoop()
+      await n.handleMessages()
+      await ping
+    except CatchableError as e:
+      n.stop = true
+      if "Invalid token" in e.msg: raise
+      await sleepAsync(5_000)
 
 macro event*(notificator: BoticordNotificator, fn: untyped): untyped =
   ## .. importdoc:: typedefs.nim

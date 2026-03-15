@@ -2,10 +2,6 @@ import options, asyncdispatch
 from ws import WebSocket
 
 type
-  APIResponse*[T] = object
-    ok*: bool
-    errors*: Option[seq[RequestError]]
-    result*: Option[T]
   RequestError* = object
     code*: ErrorCode
     message*: string
@@ -141,7 +137,7 @@ type
   PartialUser* = ref object of RootObj
     username*, discriminator*, id*: string
     avatar*, description*, shortDescription*: Option[string]
-    socials*: UserSocials
+    socials*: Option[UserSocials]
   UserProfile* = ref object of PartialUser
     badges*: seq[UserBadge]
     bots*: seq[ResourceBot]

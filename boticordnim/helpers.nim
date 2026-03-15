@@ -1,40 +1,26 @@
-import typedefs
-import jsony, asyncdispatch, options, httpclient
+from typedefs import BoticordRequestError, ErrorCode, RequestError
+import asyncdispatch, httpclient, json
 
 const
-  libAgent* = "BoticordNim/1.0.0"
+  libAgent* = "BoticordNim/1.0.5"
   baseUrl* = "https://api.boticord.top/v3"
 
-when defined(defineOptionHook):
-  proc parseHook*[T](s: string, i: var int, v: var Option[T]) =
-    ## Parse an Option.
-    eatSpace(s, i)
-    if i + 3 < s.len and
-        s[i+0] == 'n' and
-        s[i+1] == 'u' and
-        s[i+2] == 'l' and
-        s[i+3] == 'l':
-      i += 4
-      return
-    var e: T
-    parseHook(s, i, e)
-    v = some(e)
-
-proc handleErrors[T](response: APIResponse[T]) =
-  if response.ok == true: return
+proc handleErrors(response: JsonNode) =
+  if response["ok"].getBool() == true: return
 
   var e: BoticordRequestError
   new(e)
 
-  for err in response.errors.get:
-    e.errors.add(err)
-    e.msg.add($err.code & ": " & err.message & "; ")
+  for err in response["errors"].getElems():
+    let errorValue = RequestError(code: ErrorCode(err["code"].getInt()), message: err["message"].getStr())
+    e.errors.add(errorValue)
+    e.msg.add(errorValue.message & " (" & $errorValue.code & ")" & "; ")
 
   e.msg = e.msg[0..^3]
 
   raise e
 
-proc apiRequest*[T](url: string; token = "", httpMethod = HttpGet, body = ""): Future[T] {.async.} =
+proc apiRequest*(url: string; token = "", httpMethod = HttpGet, body = ""): Future[JsonNode] {.async.} =
   let client = newAsyncHttpClient(libAgent)
 
   if token.len > 0: client.headers.add("Authorization", token)
@@ -44,8 +30,8 @@ proc apiRequest*[T](url: string; token = "", httpMethod = HttpGet, body = ""): F
     response = await client.request(url,
       httpMethod = httpMethod, body = body)
     responseBody = await response.body()
-    parsedResponse = responseBody.fromJson(APIResponse[T])
+    parsedResponse = parseJson(responseBody)
 
   handleErrors(parsedResponse)
 
-  return parsedResponse.result.get
+  return parsedResponse["result"]
