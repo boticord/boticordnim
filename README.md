@@ -6,21 +6,12 @@
     Utility for interaction with Boticord API on Nim
 </p>
 
+`nimble install https://github.com/boticord/boticordnim`
+
 [API Reference](https://boticord.github.io/boticordnim/)
 
-## Installation
-
-Enter this command to install package
-```
-nimble install https://github.com/boticord/boticordnim
-```
-
-Or add `"https://github.com/boticord/boticordnim"` in your nimble `requires`
-
-If you encounter a problem that application can't find a hook for optional values, then add `-d:defineOptionHook` during compilation
-
 > [!NOTE]
-> It's recommended to provide token where it is possible in resources (bots, servers, users) methods
+> It's recommended to provide token where it is possible in resources (bots, servers, users) methods with `token` parameter, which is available for every resource method
 
 ## Examples
 
