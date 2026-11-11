@@ -16,40 +16,49 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.2.8">
+<link rel="stylesheet" type="text/css" href="../nimdoc.out.css?v=2.4.0">
 
 <!-- JS -->
-<script type="text/javascript" src="../dochack.js?v=2.2.8"></script>
+<script type="text/javascript" src="../dochack.js?v=2.4.0"></script>
 </head>
 <body>
   <div class="document" id="documentId">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" id="nav-burger">&#9776;</label>
+    <label for="nav-toggle" id="nav-overlay"></label>
     <div class="container">
       <h1 class="title">boticordnim/typedefs</h1>
       <div class="row">
   <div class="three columns">
     <div class="theme-select-wrapper">
-      <label for="theme-select">Theme:&nbsp;</label>
-      <select id="theme-select" onchange="setTheme(this.value)">
-        <option value="auto">🌗 Match OS</option>
-        <option value="dark">🌑 Dark</option>
-        <option value="light">🌕 Light</option>
-      </select>
-    </div>
+  <label for="theme-select">Theme:&nbsp;</label>
+  <select id="theme-select" onchange="setTheme(this.value)">
+    <option value="auto">🌗 Match OS</option>
+    <option value="dark">🌑 Dark</option>
+    <option value="light">🌕 Light</option>
+  </select>
+</div>
+
     <div id="global-links">
-      <ul class="simple">
-        <li><a id="indexLink" href="../theindex.html">Index</a></li>
-      </ul>
-    </div>
-    <div id="searchInputDiv">
-      Search: <input type="search" id="searchInput" oninput="search()"/>
-    </div>
-    <div>
-      Group by:
-      <select onchange="groupBy(this.value)">
-        <option value="section">Section</option>
-        <option value="type">Type</option>
-      </select>
-    </div>
+  
+  <ul class="simple">
+  <li><a id="indexLink" href="../theindex.html">Index</a></li>
+</ul>
+
+</div>
+
+      <div id="searchInputDiv">
+  Search: <input type="search" id="searchInput" oninput="search()"/>
+</div>
+
+    <div class="search-groupby">
+  Group by:
+  <select onchange="groupBy(this.value)">
+    <option value="section">Section</option>
+    <option value="type">Type</option>
+  </select>
+</div>
+
     <ul class="simple simple-toc" id="toc-list">
   <li>
   <details open>
@@ -220,16 +229,16 @@
   <h1><a class="toc-backref" href="#7">Types</a></h1>
   <dl class="item">
     <div id="BaseResourceEntity">
-  <dt><pre><a href="typedefs.html#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
+  <dt><pre><a href="#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
   <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortDescription</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">description</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">inviteLink</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">owner</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">lastFetch</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">avatar</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">website</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
   <span class="Identifier">standardBannerID</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">upCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">showDefaultBanner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">bool</span><span class="Other">]</span>
-  <span class="Identifier">status</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#ResourceStatus"><span class="Identifier">ResourceStatus</span></a>
-  <span class="Identifier">ratings</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ResourceRating"><span class="Identifier">ResourceRating</span></a><span class="Other">]</span>
-  <span class="Identifier">premium</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#PremiumResourceFeatures"><span class="Identifier">PremiumResourceFeatures</span></a>
+  <span class="Identifier">status</span><span class="Operator">*</span><span class="Other">:</span> <a href="#ResourceStatus"><span class="Identifier">ResourceStatus</span></a>
+  <span class="Identifier">ratings</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#ResourceRating"><span class="Identifier">ResourceRating</span></a><span class="Other">]</span>
+  <span class="Identifier">premium</span><span class="Operator">*</span><span class="Other">:</span> <a href="#PremiumResourceFeatures"><span class="Identifier">PremiumResourceFeatures</span></a>
   <span class="Identifier">reviewsActionsDisabled</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
-  <span class="Identifier">ups</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#UpEntity"><span class="Identifier">UpEntity</span></a><span class="Other">]</span><span class="Other">]</span></pre></dt>
+  <span class="Identifier">ups</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><a href="#UpEntity"><span class="Identifier">UpEntity</span></a><span class="Other">]</span><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -239,11 +248,11 @@
   </dd>
 </div>
 <div id="BoticordNotificator">
-  <dt><pre><a href="typedefs.html#BoticordNotificator"><span class="Identifier">BoticordNotificator</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#BoticordNotificator"><span class="Identifier">BoticordNotificator</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">token</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">connection</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">WebSocket</span>
   <span class="Identifier">stop</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
-  <span class="Identifier">events</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#NotificatorEvents"><span class="Identifier">NotificatorEvents</span></a></pre></dt>
+  <span class="Identifier">events</span><span class="Operator">*</span><span class="Other">:</span> <a href="#NotificatorEvents"><span class="Identifier">NotificatorEvents</span></a></pre></dt>
   <dd>
     
     
@@ -253,7 +262,7 @@
   </dd>
 </div>
 <div id="BoticordNotifyEvent">
-  <dt><pre><a href="typedefs.html#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">WebsocketNotifyData</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span> {.<span class="Identifier">async</span>.}</pre></dt>
+  <dt><pre><a href="#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">WebsocketNotifyData</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span> {.<span class="Identifier">async</span>.}</pre></dt>
   <dd>
     
     
@@ -263,8 +272,8 @@
   </dd>
 </div>
 <div id="BoticordRequestError">
-  <dt><pre><a href="typedefs.html#BoticordRequestError"><span class="Identifier">BoticordRequestError</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">CatchableError</span>
-  <span class="Identifier">errors</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#RequestError"><span class="Identifier">RequestError</span></a><span class="Other">]</span></pre></dt>
+  <dt><pre><a href="#BoticordRequestError"><span class="Identifier">BoticordRequestError</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">CatchableError</span>
+  <span class="Identifier">errors</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#RequestError"><span class="Identifier">RequestError</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -274,7 +283,7 @@
   </dd>
 </div>
 <div id="BotLibrary">
-  <dt><pre><a href="typedefs.html#BotLibrary"><span class="Identifier">BotLibrary</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#BotLibrary"><span class="Identifier">BotLibrary</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">blDiscord4J</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">blDiscordcr</span><span class="Other">,</span> <span class="Identifier">blDiscordGO</span><span class="Other">,</span> <span class="Identifier">blDiscordoo</span><span class="Other">,</span> <span class="Identifier">blDSharpPlus</span><span class="Other">,</span>
   <span class="Identifier">blDiscordJs</span><span class="Other">,</span> <span class="Identifier">blDiscordDotNet</span><span class="Other">,</span> <span class="Identifier">blDiscordPy</span><span class="Other">,</span> <span class="Identifier">blEris</span><span class="Other">,</span> <span class="Identifier">blJavacord</span><span class="Other">,</span> <span class="Identifier">blJDA</span><span class="Other">,</span> <span class="Identifier">blOther</span></pre></dt>
   <dd>
@@ -286,7 +295,7 @@
   </dd>
 </div>
 <div id="BotTag">
-  <dt><pre><a href="typedefs.html#BotTag"><span class="Identifier">BotTag</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#BotTag"><span class="Identifier">BotTag</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">btModeration</span><span class="Other">,</span> <span class="Identifier">btCombine</span><span class="Other">,</span> <span class="Identifier">btUtil</span><span class="Other">,</span> <span class="Identifier">btFun</span><span class="Other">,</span> <span class="Identifier">btMusic</span><span class="Other">,</span> <span class="Identifier">btEconomy</span><span class="Other">,</span> <span class="Identifier">btLogs</span><span class="Other">,</span> <span class="Identifier">btLevels</span><span class="Other">,</span>
   <span class="Identifier">btNSFW</span><span class="Other">,</span> <span class="Identifier">btCustomizable</span><span class="Other">,</span> <span class="Identifier">btRolePlay</span><span class="Other">,</span> <span class="Identifier">btMemes</span><span class="Other">,</span> <span class="Identifier">btGames</span><span class="Other">,</span> <span class="Identifier">btAI</span></pre></dt>
   <dd>
@@ -298,7 +307,7 @@
   </dd>
 </div>
 <div id="CommentAddedPayload">
-  <dt><pre><a href="typedefs.html#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">content</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">rating</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
   <dd>
@@ -310,7 +319,7 @@
   </dd>
 </div>
 <div id="CommentEditedPayload">
-  <dt><pre><a href="typedefs.html#CommentEditedPayload"><span class="Identifier">CommentEditedPayload</span></a> <span class="Other">=</span> <a href="typedefs.html#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a></pre></dt>
+  <dt><pre><a href="#CommentEditedPayload"><span class="Identifier">CommentEditedPayload</span></a> <span class="Other">=</span> <a href="#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a></pre></dt>
   <dd>
     
     
@@ -320,7 +329,7 @@
   </dd>
 </div>
 <div id="CommentRemovedPayload">
-  <dt><pre><a href="typedefs.html#CommentRemovedPayload"><span class="Identifier">CommentRemovedPayload</span></a> <span class="Other">=</span> <a href="typedefs.html#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a></pre></dt>
+  <dt><pre><a href="#CommentRemovedPayload"><span class="Identifier">CommentRemovedPayload</span></a> <span class="Other">=</span> <a href="#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a></pre></dt>
   <dd>
     
     
@@ -330,7 +339,7 @@
   </dd>
 </div>
 <div id="ErrorCode">
-  <dt><pre><a href="typedefs.html#ErrorCode"><span class="Identifier">ErrorCode</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#ErrorCode"><span class="Identifier">ErrorCode</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">ecInternalServerError</span><span class="Other">,</span> <span class="Identifier">ecRateLimited</span><span class="Other">,</span> <span class="Identifier">ecNotFound</span><span class="Other">,</span> <span class="Identifier">ecForbidden</span><span class="Other">,</span> <span class="Identifier">ecUnauthorized</span><span class="Other">,</span>
   <span class="Identifier">ecBadRequest</span><span class="Other">,</span> <span class="Identifier">ecRpcError</span><span class="Other">,</span> <span class="Identifier">ecWsError</span><span class="Other">,</span> <span class="Identifier">ecUnknownError</span><span class="Other">,</span> <span class="Identifier">ecThirdPartyFail</span><span class="Other">,</span>
   <span class="Identifier">ecUnknownUser</span><span class="Other">,</span> <span class="Identifier">ecShortLinkTaken</span><span class="Other">,</span> <span class="Identifier">ecUnknownShortDomain</span><span class="Other">,</span> <span class="Identifier">ecUnknownLibrary</span><span class="Other">,</span>
@@ -358,13 +367,13 @@
   </dd>
 </div>
 <div id="MeiliIndexedBot">
-  <dt><pre><a href="typedefs.html#MeiliIndexedBot"><span class="Identifier">MeiliIndexedBot</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#MeiliIndexedBot"><span class="Identifier">MeiliIndexedBot</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">description</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortDescription</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">invite</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">avatar</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
   <span class="Identifier">ups</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">banner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">rating</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span>
   <span class="Identifier">guilds</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span>
-  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#BotTag"><span class="Identifier">BotTag</span></a><span class="Other">]</span></pre></dt>
+  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#BotTag"><span class="Identifier">BotTag</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -374,7 +383,7 @@
   </dd>
 </div>
 <div id="MeiliIndexedComment">
-  <dt><pre><a href="typedefs.html#MeiliIndexedComment"><span class="Identifier">MeiliIndexedComment</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#MeiliIndexedComment"><span class="Identifier">MeiliIndexedComment</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">author</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">content</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">resource</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">created</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">modReply</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">rating</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
   <dd>
@@ -386,12 +395,12 @@
   </dd>
 </div>
 <div id="MeiliIndexedServer">
-  <dt><pre><a href="typedefs.html#MeiliIndexedServer"><span class="Identifier">MeiliIndexedServer</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#MeiliIndexedServer"><span class="Identifier">MeiliIndexedServer</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">description</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortDescription</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">invite</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">avatar</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">discordBanner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
   <span class="Identifier">ups</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">rating</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">banner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">members</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span>
-  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ServerTag"><span class="Identifier">ServerTag</span></a><span class="Other">]</span></pre></dt>
+  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#ServerTag"><span class="Identifier">ServerTag</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -401,7 +410,7 @@
   </dd>
 </div>
 <div id="MeiliSearchResponse">
-  <dt><pre><a href="typedefs.html#MeiliSearchResponse"><span class="Identifier">MeiliSearchResponse</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#MeiliSearchResponse"><span class="Identifier">MeiliSearchResponse</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">hits</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span>
   <span class="Identifier">query</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">hitsPerPage</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">page</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">totalPages</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">totalHits</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
@@ -414,11 +423,11 @@
   </dd>
 </div>
 <div id="NotificatorEvents">
-  <dt><pre><a href="typedefs.html#NotificatorEvents"><span class="Identifier">NotificatorEvents</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
-  <span class="Identifier">up_added</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="typedefs.html#UpAddedPayload"><span class="Identifier">UpAddedPayload</span></a><span class="Other">]</span>
-  <span class="Identifier">comment_added</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="typedefs.html#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a><span class="Other">]</span>
-  <span class="Identifier">comment_edited</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="typedefs.html#CommentEditedPayload"><span class="Identifier">CommentEditedPayload</span></a><span class="Other">]</span>
-  <span class="Identifier">comment_removed</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="typedefs.html#CommentRemovedPayload"><span class="Identifier">CommentRemovedPayload</span></a><span class="Other">]</span></pre></dt>
+  <dt><pre><a href="#NotificatorEvents"><span class="Identifier">NotificatorEvents</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <span class="Identifier">up_added</span><span class="Operator">*</span><span class="Other">:</span> <a href="#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="#UpAddedPayload"><span class="Identifier">UpAddedPayload</span></a><span class="Other">]</span>
+  <span class="Identifier">comment_added</span><span class="Operator">*</span><span class="Other">:</span> <a href="#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="#CommentAddedPayload"><span class="Identifier">CommentAddedPayload</span></a><span class="Other">]</span>
+  <span class="Identifier">comment_edited</span><span class="Operator">*</span><span class="Other">:</span> <a href="#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="#CommentEditedPayload"><span class="Identifier">CommentEditedPayload</span></a><span class="Other">]</span>
+  <span class="Identifier">comment_removed</span><span class="Operator">*</span><span class="Other">:</span> <a href="#BoticordNotifyEvent"><span class="Identifier">BoticordNotifyEvent</span></a><span class="Other">[</span><a href="#CommentRemovedPayload"><span class="Identifier">CommentRemovedPayload</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -428,7 +437,7 @@
   </dd>
 </div>
 <div id="NotifySettings">
-  <dt><pre><a href="typedefs.html#NotifySettings"><span class="Identifier">NotifySettings</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#NotifySettings"><span class="Identifier">NotifySettings</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">enabled</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
   <dd>
     
@@ -439,10 +448,10 @@
   </dd>
 </div>
 <div id="PartialUser">
-  <dt><pre><a href="typedefs.html#PartialUser"><span class="Identifier">PartialUser</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
+  <dt><pre><a href="#PartialUser"><span class="Identifier">PartialUser</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">RootObj</span>
   <span class="Identifier">username</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">discriminator</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">avatar</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">description</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shortDescription</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
-  <span class="Identifier">socials</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="typedefs.html#UserSocials"><span class="Identifier">UserSocials</span></a><span class="Other">]</span></pre></dt>
+  <span class="Identifier">socials</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="#UserSocials"><span class="Identifier">UserSocials</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -452,7 +461,7 @@
   </dd>
 </div>
 <div id="PremiumFeature">
-  <dt><pre><a href="typedefs.html#PremiumFeature"><span class="Identifier">PremiumFeature</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#PremiumFeature"><span class="Identifier">PremiumFeature</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">pfUpMultiplierOne</span> <span class="Other">=</span> <span class="StringLit">&quot;up_multiplier_one&quot;</span><span class="Other">,</span> <span class="Identifier">pfAutoFetch</span> <span class="Other">=</span> <span class="StringLit">&quot;fetch&quot;</span><span class="Other">,</span>
   <span class="Identifier">pfVanityInvite</span> <span class="Other">=</span> <span class="StringLit">&quot;vanity_invite&quot;</span><span class="Other">,</span> <span class="Identifier">pfUpMultiplierTwo</span> <span class="Other">=</span> <span class="StringLit">&quot;up_multiplier_two&quot;</span><span class="Other">,</span>
   <span class="Identifier">pfSplash</span> <span class="Other">=</span> <span class="StringLit">&quot;splash&quot;</span><span class="Other">,</span> <span class="Identifier">pfBanner</span> <span class="Other">=</span> <span class="StringLit">&quot;banner&quot;</span><span class="Other">,</span>
@@ -467,10 +476,10 @@
   </dd>
 </div>
 <div id="PremiumResourceFeatures">
-  <dt><pre><a href="typedefs.html#PremiumResourceFeatures"><span class="Identifier">PremiumResourceFeatures</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#PremiumResourceFeatures"><span class="Identifier">PremiumResourceFeatures</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">active</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">autoFetch</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
   <span class="Identifier">splashURL</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">bannerURL</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">vanityInvite</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">vanityURL</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
-  <span class="Identifier">features</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#PremiumFeature"><span class="Identifier">PremiumFeature</span></a><span class="Other">]</span></pre></dt>
+  <span class="Identifier">features</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#PremiumFeature"><span class="Identifier">PremiumFeature</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -480,8 +489,8 @@
   </dd>
 </div>
 <div id="RequestError">
-  <dt><pre><a href="typedefs.html#RequestError"><span class="Identifier">RequestError</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">code</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#ErrorCode"><span class="Identifier">ErrorCode</span></a>
+  <dt><pre><a href="#RequestError"><span class="Identifier">RequestError</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">code</span><span class="Operator">*</span><span class="Other">:</span> <a href="#ErrorCode"><span class="Identifier">ErrorCode</span></a>
   <span class="Identifier">message</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
   <dd>
     
@@ -492,14 +501,14 @@
   </dd>
 </div>
 <div id="ResourceBot">
-  <dt><pre><a href="typedefs.html#ResourceBot"><span class="Identifier">ResourceBot</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="typedefs.html#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a>
+  <dt><pre><a href="#ResourceBot"><span class="Identifier">ResourceBot</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a>
   <span class="Identifier">prefix</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">discriminator</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">createdDate</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">supportServerInviteCode</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
-  <span class="Identifier">developers</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#PartialUser"><span class="Identifier">PartialUser</span></a><span class="Other">]</span>
-  <span class="Identifier">library</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="typedefs.html#BotLibrary"><span class="Identifier">BotLibrary</span></a><span class="Other">]</span>
+  <span class="Identifier">developers</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#PartialUser"><span class="Identifier">PartialUser</span></a><span class="Other">]</span>
+  <span class="Identifier">library</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="#BotLibrary"><span class="Identifier">BotLibrary</span></a><span class="Other">]</span>
   <span class="Identifier">guilds</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">members</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">shards</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span>
-  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#BotTag"><span class="Identifier">BotTag</span></a><span class="Other">]</span>
-  <span class="Identifier">notify</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="typedefs.html#NotifySettings"><span class="Identifier">NotifySettings</span></a><span class="Other">]</span></pre></dt>
+  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#BotTag"><span class="Identifier">BotTag</span></a><span class="Other">]</span>
+  <span class="Identifier">notify</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><a href="#NotifySettings"><span class="Identifier">NotifySettings</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -509,7 +518,7 @@
   </dd>
 </div>
 <div id="ResourceRating">
-  <dt><pre><a href="typedefs.html#ResourceRating"><span class="Identifier">ResourceRating</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#ResourceRating"><span class="Identifier">ResourceRating</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">count</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">rating</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">1</span> <span class="Operator">..</span> <span class="DecNumber">5</span><span class="Other">]</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
   <dd>
@@ -521,12 +530,12 @@
   </dd>
 </div>
 <div id="ResourceServer">
-  <dt><pre><a href="typedefs.html#ResourceServer"><span class="Identifier">ResourceServer</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="typedefs.html#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a>
+  <dt><pre><a href="#ResourceServer"><span class="Identifier">ResourceServer</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="#BaseResourceEntity"><span class="Identifier">BaseResourceEntity</span></a>
   <span class="Identifier">memberCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">bannerURL</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">banner</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span>
   <span class="Identifier">createdDate</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
-  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ServerTag"><span class="Identifier">ServerTag</span></a><span class="Other">]</span>
-  <span class="Identifier">moderators</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#PartialUser"><span class="Identifier">PartialUser</span></a><span class="Other">]</span></pre></dt>
+  <span class="Identifier">tags</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#ServerTag"><span class="Identifier">ServerTag</span></a><span class="Other">]</span>
+  <span class="Identifier">moderators</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#PartialUser"><span class="Identifier">PartialUser</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -536,7 +545,7 @@
   </dd>
 </div>
 <div id="ResourceStatus">
-  <dt><pre><a href="typedefs.html#ResourceStatus"><span class="Identifier">ResourceStatus</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#ResourceStatus"><span class="Identifier">ResourceStatus</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">rsHidden</span><span class="Other">,</span> <span class="Identifier">rsPublic</span><span class="Other">,</span> <span class="Identifier">rsBanned</span><span class="Other">,</span> <span class="Identifier">rsPending</span></pre></dt>
   <dd>
     
@@ -547,7 +556,7 @@
   </dd>
 </div>
 <div id="ServerTag">
-  <dt><pre><a href="typedefs.html#ServerTag"><span class="Identifier">ServerTag</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#ServerTag"><span class="Identifier">ServerTag</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">stChatting</span> <span class="Other">=</span> <span class="DecNumber">130</span><span class="Other">,</span> <span class="Identifier">stFun</span><span class="Other">,</span> <span class="Identifier">stGames</span><span class="Other">,</span> <span class="Identifier">stMovies</span><span class="Other">,</span> <span class="Identifier">stAnime</span><span class="Other">,</span> <span class="Identifier">stArt</span><span class="Other">,</span> <span class="Identifier">stProgramming</span><span class="Other">,</span>
   <span class="Identifier">stMusic</span><span class="Other">,</span> <span class="Identifier">stNSFW</span><span class="Other">,</span> <span class="Identifier">stRolePlay</span><span class="Other">,</span> <span class="Identifier">stHumor</span><span class="Other">,</span> <span class="Identifier">stGenshin</span> <span class="Other">=</span> <span class="DecNumber">160</span><span class="Other">,</span> <span class="Identifier">stMinecraft</span><span class="Other">,</span> <span class="Identifier">stGTA</span><span class="Other">,</span>
   <span class="Identifier">stCS</span><span class="Other">,</span> <span class="Identifier">stDota</span><span class="Other">,</span> <span class="Identifier">stAmongUs</span><span class="Other">,</span> <span class="Identifier">stFortnite</span><span class="Other">,</span> <span class="Identifier">stBrawlStars</span></pre></dt>
@@ -560,7 +569,7 @@
   </dd>
 </div>
 <div id="UpAddedPayload">
-  <dt><pre><a href="typedefs.html#UpAddedPayload"><span class="Identifier">UpAddedPayload</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#UpAddedPayload"><span class="Identifier">UpAddedPayload</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">upCount</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
   <dd>
     
@@ -571,7 +580,7 @@
   </dd>
 </div>
 <div id="UpEntity">
-  <dt><pre><a href="typedefs.html#UpEntity"><span class="Identifier">UpEntity</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#UpEntity"><span class="Identifier">UpEntity</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span>
   <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">expires</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
   <dd>
     
@@ -582,7 +591,7 @@
   </dd>
 </div>
 <div id="UserBadge">
-  <dt><pre><a href="typedefs.html#UserBadge"><span class="Identifier">UserBadge</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#UserBadge"><span class="Identifier">UserBadge</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">assetURL</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
   <dd>
@@ -594,7 +603,7 @@
   </dd>
 </div>
 <div id="UserLinkType">
-  <dt><pre><a href="typedefs.html#UserLinkType"><span class="Identifier">UserLinkType</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#UserLinkType"><span class="Identifier">UserLinkType</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">ultVk</span><span class="Other">,</span> <span class="Identifier">ultTelegram</span><span class="Other">,</span> <span class="Identifier">ultDonate</span><span class="Other">,</span> <span class="Identifier">ultGit</span><span class="Other">,</span> <span class="Identifier">ultCustom</span></pre></dt>
   <dd>
     
@@ -605,10 +614,10 @@
   </dd>
 </div>
 <div id="UserProfile">
-  <dt><pre><a href="typedefs.html#UserProfile"><span class="Identifier">UserProfile</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="typedefs.html#PartialUser"><span class="Identifier">PartialUser</span></a>
-  <span class="Identifier">badges</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#UserBadge"><span class="Identifier">UserBadge</span></a><span class="Other">]</span>
-  <span class="Identifier">bots</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ResourceBot"><span class="Identifier">ResourceBot</span></a><span class="Other">]</span>
-  <span class="Identifier">servers</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="typedefs.html#ResourceServer"><span class="Identifier">ResourceServer</span></a><span class="Other">]</span></pre></dt>
+  <dt><pre><a href="#UserProfile"><span class="Identifier">UserProfile</span></a> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <a href="#PartialUser"><span class="Identifier">PartialUser</span></a>
+  <span class="Identifier">badges</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#UserBadge"><span class="Identifier">UserBadge</span></a><span class="Other">]</span>
+  <span class="Identifier">bots</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#ResourceBot"><span class="Identifier">ResourceBot</span></a><span class="Other">]</span>
+  <span class="Identifier">servers</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="#ResourceServer"><span class="Identifier">ResourceServer</span></a><span class="Other">]</span></pre></dt>
   <dd>
     
     
@@ -618,7 +627,7 @@
   </dd>
 </div>
 <div id="UserSocials">
-  <dt><pre><a href="typedefs.html#UserSocials"><span class="Identifier">UserSocials</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#UserSocials"><span class="Identifier">UserSocials</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">vk</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">git</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">telegram</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">donate</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">custom</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Option</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
   <dd>
     
@@ -629,7 +638,7 @@
   </dd>
 </div>
 <div id="WebsocketAuthData">
-  <dt><pre><a href="typedefs.html#WebsocketAuthData"><span class="Identifier">WebsocketAuthData</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#WebsocketAuthData"><span class="Identifier">WebsocketAuthData</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">token</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
   <dd>
     
@@ -640,7 +649,7 @@
   </dd>
 </div>
 <div id="WebsocketNotifyData">
-  <dt><pre><a href="typedefs.html#WebsocketNotifyData"><span class="Identifier">WebsocketNotifyData</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#WebsocketNotifyData"><span class="Identifier">WebsocketNotifyData</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">id</span><span class="Operator">*</span><span class="Other">,</span> <span class="Identifier">user</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">happened</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">payload</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
@@ -653,7 +662,7 @@
   </dd>
 </div>
 <div id="WebsocketNotifyType">
-  <dt><pre><a href="typedefs.html#WebsocketNotifyType"><span class="Identifier">WebsocketNotifyType</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#WebsocketNotifyType"><span class="Identifier">WebsocketNotifyType</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">UpAdded</span> <span class="Other">=</span> <span class="StringLit">&quot;up_added&quot;</span><span class="Other">,</span> <span class="Identifier">ReviewAdded</span> <span class="Other">=</span> <span class="StringLit">&quot;comment_added&quot;</span><span class="Other">,</span>
   <span class="Identifier">ReviewEdited</span> <span class="Other">=</span> <span class="StringLit">&quot;comment_edited&quot;</span><span class="Other">,</span> <span class="Identifier">ReviewRemoved</span> <span class="Other">=</span> <span class="StringLit">&quot;comment_removed&quot;</span></pre></dt>
   <dd>
@@ -665,8 +674,8 @@
   </dd>
 </div>
 <div id="WebsocketPacket">
-  <dt><pre><a href="typedefs.html#WebsocketPacket"><span class="Identifier">WebsocketPacket</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">event</span><span class="Operator">*</span><span class="Other">:</span> <a href="typedefs.html#WebsocketSendEvent"><span class="Identifier">WebsocketSendEvent</span></a>
+  <dt><pre><a href="#WebsocketPacket"><span class="Identifier">WebsocketPacket</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">event</span><span class="Operator">*</span><span class="Other">:</span> <a href="#WebsocketSendEvent"><span class="Identifier">WebsocketSendEvent</span></a>
   <span class="Identifier">data</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
   <dd>
     
@@ -677,7 +686,7 @@
   </dd>
 </div>
 <div id="WebsocketReceiveEvent">
-  <dt><pre><a href="typedefs.html#WebsocketReceiveEvent"><span class="Identifier">WebsocketReceiveEvent</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#WebsocketReceiveEvent"><span class="Identifier">WebsocketReceiveEvent</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">wreHello</span> <span class="Other">=</span> <span class="StringLit">&quot;hello&quot;</span><span class="Other">,</span> <span class="Identifier">wrePong</span> <span class="Other">=</span> <span class="StringLit">&quot;pong&quot;</span><span class="Other">,</span> <span class="Identifier">wreNotify</span> <span class="Other">=</span> <span class="StringLit">&quot;notify&quot;</span></pre></dt>
   <dd>
     
@@ -688,7 +697,7 @@
   </dd>
 </div>
 <div id="WebsocketSendEvent">
-  <dt><pre><a href="typedefs.html#WebsocketSendEvent"><span class="Identifier">WebsocketSendEvent</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#WebsocketSendEvent"><span class="Identifier">WebsocketSendEvent</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">wsePing</span> <span class="Other">=</span> <span class="StringLit">&quot;ping&quot;</span><span class="Other">,</span> <span class="Identifier">wseAuth</span> <span class="Other">=</span> <span class="StringLit">&quot;auth&quot;</span></pre></dt>
   <dd>
     
@@ -708,7 +717,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-03-15 14:44:20 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-11-11 13:44:15 UTC</small>
       </div>
     </div>
   </div>
