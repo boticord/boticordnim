@@ -24,6 +24,7 @@ proc searchIndex[T](token, indexName: string;
       "q": query,
       "hitsPerPage": hitsPerPage
     }
+  defer: client.close()
 
   if filter.len > 0: body["filter"] = newJString(filter)
   if sort.len > 0: body["sort"] = newJString(sort)

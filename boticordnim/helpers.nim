@@ -22,6 +22,7 @@ proc handleErrors(response: JsonNode) =
 
 proc apiRequest*(url: string; token = "", httpMethod = HttpGet, body = ""): Future[JsonNode] {.async.} =
   let client = newAsyncHttpClient(libAgent)
+  defer: client.close()
 
   if token.len > 0: client.headers.add("Authorization", token)
   if body.len > 0: client.headers.add("Content-Type", "application/json")
