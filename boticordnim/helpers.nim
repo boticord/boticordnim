@@ -2,7 +2,7 @@ from typedefs import BoticordRequestError, ErrorCode, RequestError
 import asyncdispatch, httpclient, json
 
 const
-  libAgent* = "BoticordNim/1.0.5"
+  libAgent* = "BoticordNim/1.0.6"
   baseUrl* = "https://api.boticord.top/v3"
 
 proc handleErrors(response: JsonNode) =
